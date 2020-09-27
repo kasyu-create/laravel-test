@@ -13,9 +13,12 @@ class VacancyLevelTest extends TestCase
 * @dataProvider dataMark
 */
     public function testMark(int $remainingCount, string $expectedMark)
+    //testMark関数（入力されたモノを変換する役割）でinteger(整数)の$remainingCountとstring(文字列)の$expectedMarkを受け取っている
     {
         $level = new VacancyLevel($remainingCount);
         $this->assertSame($expectedMark, $level->mark());
+        //変数$levelにVacancyLevelクラス（設計図）からモノ（インスタンス）を生成している。（引数は整数が入る$remainingCount）
+        //assertSameとはある値が期待した値と等しいかどうか調べるメソッド（関数）
     }
     public function dataMark()
     {
